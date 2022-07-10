@@ -17,9 +17,9 @@ public class SystemTest {
         RestTemplate restTemplate = new
             RestTemplate();
 
-        String url = "http://localhost:8080/addemployee";
-        String employeelisturl = "http://localhost:8080/listemployee";
-        String deleteemployeeurl = "http://localhost:8080/deleteemployee";
+        String url = "http://localhost:8082/addemployee";
+        String employeelisturl = "http://localhost:8082/listemployee";
+        String deleteemployeeurl = "http://localhost:8082/deleteemployee";
         Employee employee = new Employee("Karthik","9876547687","IT","karthik@gmail.com","Bengaluru","Employee");
         ResponseEntity<Employee> entity
                 = restTemplate.postForEntity(url, employee, Employee.class);
@@ -38,7 +38,7 @@ public class SystemTest {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8080/wrong";
+        String url = "http://localhost:8082/wrong";
 
         try {
             restTemplate.getForEntity(url, String.class);
